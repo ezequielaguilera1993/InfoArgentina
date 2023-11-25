@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos de YouTube</title>
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .video {
+      position: relative;
+      width: 30%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0; /* Inicialmente oculto */
+      transition: opacity 0.3s ease; /* Agregamos una transición para suavizar el cambio */
+    }
+
+    .video:hover .overlay {
+      opacity: 1; /* Mostrar cuando se hace hover */
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <div class="video" onmouseover="toggleVolume('video1')" onmouseout="toggleVolume('video1')">
+    <div class="overlay">Hover para activar el audio</div>
+    <iframe id="video1" src="https://www.youtube.com/embed/dRewm-wvNRU?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video" onmouseover="toggleVolume('video2')" onmouseout="toggleVolume('video2')">
+    <div class="overlay">Hover para activar el audio</div>
+    <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video" onmouseover="toggleVolume('video3')" onmouseout="toggleVolume('video3')">
+    <div class="overlay">Hover para activar el audio</div>
+    <iframe id="video3" src="https://www.youtube.com/embed/R3u2BBU5PHw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var players = [];
+
+  function onYouTubeIframeAPIReady() {
+    players.push(new YT.Player('video1'));
+    players.push(new YT.Player('video2'));
+    players.push(new YT.Player('video3'));
+  }
+</script>
+
+</body>
+</html>
