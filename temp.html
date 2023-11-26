@@ -5,6 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <style>
+        .video-container {
+            height: 100vh; /* Set the height of the container to 100% of the viewport height */
+        }
+
+        iframe {
+            height: 100vh
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 33vh;
+            margin: 0;
+        }
+
+        iframe {
+            width: 100%;
+        }
+    </style>
+
+
 </head>
 <body>
 
@@ -16,6 +39,7 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="#diarios" data-toggle="tab">Diarios</a></li>
             <li><a href="#noticieros" data-toggle="tab">Noticieros</a></li>
+            <li><a href="#boletinOficial" data-toggle="tab">Boletín Oficial</a></li>
         </ul>
     </div>
 </nav>
@@ -24,7 +48,6 @@
     <div class="tab-content">
         <!-- Pestaña Diarios -->
         <div id="diarios" class="tab-pane fade in active">
-
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#elpais" data-toggle="tab">El País</a></li>
                 <li><a href="#ambito" data-toggle="tab">Ámbito</a></li>
@@ -36,6 +59,7 @@
                 <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
                 <li><a href="#tiempoar" data-toggle="tab">Tiempo Argentino</a></li>
                 <li><a href="#cronica" data-toggle="tab">Crónica</a></li>
+                <li><a href="#nytimes" data-toggle="tab">New York Times</a></li>
             </ul>
             <div class="tab-content">
                 <div id="elpais" class="tab-pane fade in active">
@@ -78,6 +102,12 @@
                 <div id="cronica" class="tab-pane fade">
                     <iframe src="https://www.cronica.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
                 </div>
+
+                <div id="nytimes" class="tab-pane fade">
+                    <iframe src="https://www.nytimes.com/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+
             </div>
         </div>
 
@@ -85,53 +115,61 @@
         <div id="noticieros" class="tab-pane fade">
             <div class="container-fluid">
                 <div class="row video-container">
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video1" src="https://www.youtube.com/embed/cb12KmMMDJA" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video3" src="https://www.youtube.com/embed/avly0uwZzOE" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video4" src="https://www.youtube.com/embed/QGpHLgRnrx4" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video5" src="https://www.youtube.com/embed/TFUxzueYtyc" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video6" src="https://www.youtube.com/embed/Tqwhq_8QAGk" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video7" src="https://www.youtube.com/embed/tsStUN73_6I" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video8" src="https://www.youtube.com/embed/Gq6MIaZ501A" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4">
                         <iframe id="video9" src="https://www.youtube.com/embed/HNNSYYmP7qs" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="boletinOficial" class="tab-pane fade">
+            <div class="container-fluid">
+                    <iframe id="s" src="https://www.boletinoficial.gob.ar/" frameborder="0"
+                            allowfullscreen></iframe>
+            </div>
+        </div>
+
     </div>
 </div>
 
