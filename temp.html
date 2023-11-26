@@ -1,78 +1,145 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos de YouTube</title>
-  <style>
-    .video-container {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-
-    .video {
-      position: relative;
-      width: 30%;
-      overflow: hidden;
-      margin-right: 10px;
-    }
-
-    .video iframe {
-      width: 100%;
-      height: 100%;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0; /* Inicialmente oculto */
-      transition: opacity 0.3s ease; /* Agregamos una transición para suavizar el cambio */
-    }
-
-    .video:hover .overlay {
-      opacity: 1; /* Mostrar cuando se hace hover */
-    }
-  </style>
+    <title>Diarios y Noticieros</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
-<div class="video-container">
-  <div class="video" onmouseover="toggleVolume('video1')" onmouseout="toggleVolume('video1')">
-    <div class="overlay">Hover para activar el audio</div>
-    <iframe id="video1" src="https://www.youtube.com/embed/dRewm-wvNRU?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video" onmouseover="toggleVolume('video2')" onmouseout="toggleVolume('video2')">
-    <div class="overlay">Hover para activar el audio</div>
-    <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="video" onmouseover="toggleVolume('video3')" onmouseout="toggleVolume('video3')">
-    <div class="overlay">Hover para activar el audio</div>
-    <iframe id="video3" src="https://www.youtube.com/embed/R3u2BBU5PHw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-  </div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Diarios y Noticieros</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#diarios" data-toggle="tab">Diarios</a></li>
+            <li><a href="#noticieros" data-toggle="tab">Noticieros</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="tab-content">
+        <!-- Pestaña Diarios -->
+        <div id="diarios" class="tab-pane fade in active">
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#elpais" data-toggle="tab">El País</a></li>
+                <li><a href="#ambito" data-toggle="tab">Ámbito</a></li>
+                <li><a href="#laprensa" data-toggle="tab">La Prensa</a></li>
+                <li><a href="#clarin" data-toggle="tab">Clarín</a></li>
+                <li><a href="#lanacion" data-toggle="tab">La Nación</a></li>
+                <li><a href="#diariopopular" data-toggle="tab">Diario Popular</a></li>
+                <li><a href="#pagina12" data-toggle="tab">Página 12</a></li>
+                <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
+                <li><a href="#tiempoar" data-toggle="tab">Tiempo Argentino</a></li>
+                <li><a href="#cronica" data-toggle="tab">Crónica</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="elpais" class="tab-pane fade in active">
+                    <iframe src="https://elpais.com/argentina/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="ambito" class="tab-pane fade">
+                    <iframe src="https://www.ambito.com/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="laprensa" class="tab-pane fade">
+                    <iframe src="https://www.laprensa.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="clarin" class="tab-pane fade">
+                    <iframe src="https://www.clarin.com/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="lanacion" class="tab-pane fade">
+                    <iframe src="https://www.lanacion.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="diariopopular" class="tab-pane fade">
+                    <iframe src="https://www.diariopopular.com.ar/" width="100%" height="600px"
+                            frameborder="0"></iframe>
+                </div>
+
+                <div id="pagina12" class="tab-pane fade">
+                    <iframe src="https://www.pagina12.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="perfil" class="tab-pane fade">
+                    <iframe src="https://www.perfil.com/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="tiempoar" class="tab-pane fade">
+                    <iframe src="https://www.tiempoar.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="cronica" class="tab-pane fade">
+                    <iframe src="https://www.cronica.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestaña Noticieros -->
+        <div id="noticieros" class="tab-pane fade">
+            <div class="container-fluid">
+                <div class="row video-container">
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video1" src="https://www.youtube.com/embed/cb12KmMMDJA" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video3" src="https://www.youtube.com/embed/avly0uwZzOE" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video4" src="https://www.youtube.com/embed/QGpHLgRnrx4" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video5" src="https://www.youtube.com/embed/TFUxzueYtyc" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video6" src="https://www.youtube.com/embed/Tqwhq_8QAGk" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video7" src="https://www.youtube.com/embed/tsStUN73_6I" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video8" src="https://www.youtube.com/embed/Gq6MIaZ501A" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <iframe id="video9" src="https://www.youtube.com/embed/HNNSYYmP7qs" frameborder="0"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  var players = [];
-
-  function onYouTubeIframeAPIReady() {
-    players.push(new YT.Player('video1'));
-    players.push(new YT.Player('video2'));
-    players.push(new YT.Player('video3'));
-  }
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

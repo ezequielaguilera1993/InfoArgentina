@@ -1,121 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Videos con Hover</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
         .video-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
         }
 
-        .video-wrapper {
-            position: relative;
-            margin: 10px;
-        }
-
-        .video-wrapper:hover .video-overlay {
-            display: none;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-container iframe {
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
+            height: 315px;
         }
     </style>
 </head>
 <body>
 
-<div class="video-container">
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(0)">Hover para activar audio</div> -->
-        <iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/cb12KmMMDJA" frameborder="0" allowfullscreen></iframe>
-    </div>
+<div class="container-fluid">
+    <div class="row video-container">
+        <div class="col-lg-4 mb-4">
+            <iframe id="video1" src="https://www.youtube.com/embed/cb12KmMMDJA" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(1)">Hover para activar audio</div> -->
-        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/4e8Iw3Frf1A" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(2)">Hover para activar audio</div> -->
-        <iframe id="video3" width="560" height="315" src="https://www.youtube.com/embed/avly0uwZzOE" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video3" src="https://www.youtube.com/embed/avly0uwZzOE" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(3)">Hover para activar audio</div> -->
-        <iframe id="video4" width="560" height="315" src="https://www.youtube.com/embed/QGpHLgRnrx4" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video4" src="https://www.youtube.com/embed/QGpHLgRnrx4" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(4)">Hover para activar audio</div> -->
-        <iframe id="video5" width="560" height="315" src="https://www.youtube.com/embed/TFUxzueYtyc" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video5" src="https://www.youtube.com/embed/TFUxzueYtyc" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(5)">Hover para activar audio</div> -->
-        <iframe id="video6" width="560" height="315" src="https://www.youtube.com/embed/Tqwhq_8QAGk" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video6" src="https://www.youtube.com/embed/Tqwhq_8QAGk" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(6)">Hover para activar audio</div> -->
-        <iframe id="video7" width="560" height="315" src="https://www.youtube.com/embed/tsStUN73_6I" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video7" src="https://www.youtube.com/embed/tsStUN73_6I" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(7)">Hover para activar audio</div> -->
-        <iframe id="video8" width="560" height="315" src="https://www.youtube.com/embed/Gq6MIaZ501A" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video8" src="https://www.youtube.com/embed/Gq6MIaZ501A" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
 
-    <div class="video-wrapper">
-        <!--<div class="video-overlay" onclick="toggleMute(8)">Hover para activar audio</div> -->
-        <iframe id="video9" width="560" height="315" src="https://www.youtube.com/embed/HNNSYYmP7qs" frameborder="0" allowfullscreen></iframe>
+        <div class="col-lg-4 mb-4">
+            <iframe id="video9" src="https://www.youtube.com/embed/HNNSYYmP7qs" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
     </div>
-
 </div>
 
-<script>
-    function toggleMute(videoNumber) {
-        let video = document.getElementById('video' + (videoNumber + 1));
-        // Crear un MouseEvent de clic artificial
-        let evt = new MouseEvent("click", {
-            bubbles: true,
-            cancelable: true,
-            view: window,
-        });
-
-        // Enviar el evento al elemento de la casilla de verificación
-        video.dispatchEvent(evt);
-    }
-
-    // Agrega event listeners para hover y salida de hover
-    document.querySelectorAll('.video-wrapper').forEach(function(wrapper, index) {
-        wrapper.addEventListener('mouseenter', function() {
-            toggleMute(index);
-        });
-
-        wrapper.addEventListener('mouseleave', function() {
-            toggleMute(index);
-        });
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
