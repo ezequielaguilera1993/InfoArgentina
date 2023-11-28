@@ -25,6 +25,16 @@
 
     </style>
 
+    <script>
+        // Cargar contenido de la página de Crónica usando jQuery
+        $(document).ready(function () {
+            $.get("https://www.cronica.com.ar/", function (data) {
+                // Insertar el contenido en el div
+                console.log("poniendo el html en coso")
+                $("#cronicaContent").html(data);
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -53,6 +63,8 @@
                 <li><a href="#pagina12" data-toggle="tab">Página 12</a></li>
                 <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
                 <li><a href="#tiempoar" data-toggle="tab">Tiempo Argentino</a></li>
+                <li><a href="#ole" data-toggle="tab">Olé</a></li>
+                <li><a href="#lavozinterior" data-toggle="tab">La Voz</a></li>
                 <li><a href="#cronica" data-toggle="tab">Crónica</a></li>
                 <li><a href="#nytimes" data-toggle="tab">New York Times</a></li>
             </ul>
@@ -95,11 +107,23 @@
                 </div>
 
                 <div id="cronica" class="tab-pane fade">
+                    no anda!
                     <iframe src="https://www.cronica.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
                 </div>
 
                 <div id="nytimes" class="tab-pane fade">
-                    <iframe src="https://www.nytimes.com/" width="100%" height="600px" frameborder="0"></iframe>
+                    no anda!
+                    <iframe src="https://www.nytimes.com/" width="100%" height="600px" frameborder="0"
+                            sandbox="allow-same-origin allow-scripts" referrer="no-referrer"></iframe>
+                </div>
+
+                <div id="ole" class="tab-pane fade">
+                    no anda!
+                    <iframe src="https://www.ole.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+
+                <div id="lavozinterior" class="tab-pane fade">
+                    <iframe src="https://www.lavoz.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
                 </div>
 
 
@@ -164,13 +188,12 @@
                         allowfullscreen></iframe>
             </div>
         </div>
-
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
