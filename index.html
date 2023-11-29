@@ -1,196 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2544137275119297"
-            crossorigin="anonymous"></script>
     <title>Info Argentina</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-
     <style>
-        .video-container {
-            height: 100vh; /* Set the height of the container to 100% of the viewport height */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #333;
+            color: white;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-content {
+            padding: 1px;
+        }
+
+        .tab-pane {
+            display: none;
         }
 
         iframe {
-            height: 100vh;
             width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .video-container iframe {
             width: 100%;
-            height: 33vh;
-            margin: 0;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .column {
+            width: 33.33%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .diarios-tabs {
+            display: flex;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .diarios-tabs a {
+            flex: 1;
+            padding: 1vh 0vw;
+            margin: 0px 0;
+            text-decoration: none;
+            border: 1px solid #333;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: x-small;
+            color: #333;
+        }
+
+        .diarios-tabs a:hover {
+            background-color: #333;
+            color: #ddd;
+        }
+
+        #tips-container {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: small;
+            border-radius: 5px;
+            font-size: smaller;
+            margin-top: 0.5vh; /* Ajusta la posición vertical */
+            display: block; /* Asegura que esté visible al inicio */
         }
 
     </style>
-
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#diarios" data-toggle="tab">Diarios</a></li>
-            <li><a href="#noticieros" data-toggle="tab">Noticieros</a></li>
-            <li><a href="#boletinOficial" data-toggle="tab">Boletín Oficial</a></li>
-        </ul>
-    </div>
+<nav>
+    <a href="#diarios" onclick="openTab('diarios')">Diarios</a>
+    <a href="#noticieros" onclick="openTab('noticieros')">Noticieros</a>
+    <a href="#boletinOficial" onclick="openTab('boletinOficial')">Boletín Oficial</a>
+    <a href="#clima" onclick="openTab('clima')">Clima</a>
+    <div id="tips-container" onclick="toggleTipsVisibility()">Doble click en pestañas para abrirlas en otra tab del navegador</div>
 </nav>
 
-<div class="container-fluid">
-    <div class="tab-content">
-        <!-- Pestaña Diarios -->
-        <div id="diarios" class="tab-pane fade in active">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#elpais" data-toggle="tab">El País</a></li>
-                <li><a href="#ambito" data-toggle="tab">Ámbito</a></li>
-                <li><a href="#laprensa" data-toggle="tab">La Prensa</a></li>
-                <li><a href="#clarin" data-toggle="tab">Clarín</a></li>
-                <li><a href="#lanacion" data-toggle="tab">La Nación</a></li>
-                <li><a href="#diariopopular" data-toggle="tab">Diario Popular</a></li>
-                <li><a href="#pagina12" data-toggle="tab">Página 12</a></li>
-                <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
-                <li><a href="#tiempoar" data-toggle="tab">Tiempo Argentino</a></li>
-                <li><a href="#ole" data-toggle="tab">Olé</a></li>
-                <li><a href="#infobae" data-toggle="tab">InfoBae</a></li>
-                <li><a href="#lavozinterior" data-toggle="tab">La Voz</a></li>
-                <li><a href="#cronica" data-toggle="tab">Crónica</a></li>
-                <li><a href="#nytimes" data-toggle="tab">New York Times</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="elpais" class="tab-pane fade in active">
-                    <iframe src="https://elpais.com/argentina/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="ambito" class="tab-pane fade">
-                    <iframe src="https://www.ambito.com/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="laprensa" class="tab-pane fade">
-                    <iframe src="https://www.laprensa.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="clarin" class="tab-pane fade">
-                    <iframe src="https://www.clarin.com/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="lanacion" class="tab-pane fade">
-                    <iframe src="https://www.lanacion.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="diariopopular" class="tab-pane fade">
-                    <iframe src="https://www.diariopopular.com.ar/" width="100%" height="600px"
-                            frameborder="0"></iframe>
-                </div>
-
-                <div id="pagina12" class="tab-pane fade">
-                    <iframe src="https://www.pagina12.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="perfil" class="tab-pane fade">
-                    <iframe src="https://www.perfil.com/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="tiempoar" class="tab-pane fade">
-                    <iframe src="https://www.tiempoar.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="cronica" class="tab-pane fade">
-                    no anda!
-                    <iframe src="https://www.cronica.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="nytimes" class="tab-pane fade">
-                    no anda!
-                    <iframe src="https://www.nytimes.com/" width="100%" height="600px" frameborder="0"
-                            sandbox="allow-same-origin allow-scripts" referrer="no-referrer"></iframe>
-                </div>
-
-                <div id="ole" class="tab-pane fade">
-                    no anda!
-                    <iframe src="https://www.ole.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="lavozinterior" class="tab-pane fade">
-                    <iframe src="https://www.lavoz.com.ar/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-                <div id="infobae" class="tab-pane fade">
-                    <iframe src="hhttps://www.infobae.com/" width="100%" height="600px" frameborder="0"></iframe>
-                </div>
-
-            </div>
+<div class="tab-content">
+    <!-- Pestaña Diarios -->
+    <div id="diarios" class="tab-pane" style="display: block;">
+        <div class="diarios-tabs">
+            <a href="https://elpais.com/argentina/" target="diariosIframe" ondblclick="openPage(this.href)">El
+                País</a>
+            <a href="https://www.ambito.com/" target="diariosIframe" ondblclick="openPage(this.href)">Ámbito</a>
+            <a href="https://www.laprensa.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La
+                Prensa</a>
+            <a href="https://www.clarin.com/" target="diariosIframe" ondblclick="openPage(this.href)">Clarín</a>
+            <a href="https://www.lanacion.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La
+                Nación</a>
+            <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Diario
+                Popular</a>
+            <a href="https://www.pagina12.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Página
+                12</a>
+            <a href="https://www.perfil.com/" target="diariosIframe" ondblclick="openPage(this.href)">Perfil</a>
+            <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Tiempo
+                Argentino</a>
+            <a href="https://www.ole.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Olé</a>
+            <a href="https://www.infobae.com/" target="diariosIframe" ondblclick="openPage(this.href)">InfoBae</a>
+            <a href="https://www.lavoz.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Voz</a>
+            <a href="https://www.cronica.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Crónica</a>
+            <a href="https://www.nytimes.com/" target="diariosIframe" ondblclick="openPage(this.href)">New York
+                Times</a>
         </div>
+        <iframe title="diariosIframe" src="https://elpais.com/argentina/" id="diariosIframe" name="diariosIframe" ></iframe>
+    </div>
 
-        <!-- Pestaña Noticieros -->
-        <div id="noticieros" class="tab-pane fade">
-            <div class="container-fluid">
-                <div class="row video-container">
-                    <div class="col-lg-4">
-                        <iframe id="video1" src="https://www.youtube.com/embed/cb12KmMMDJA" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video2" src="https://www.youtube.com/embed/4e8Iw3Frf1A" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video3" src="https://www.youtube.com/embed/avly0uwZzOE" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video4" src="https://www.youtube.com/embed/QGpHLgRnrx4" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video5" src="https://www.youtube.com/embed/TFUxzueYtyc" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video6" src="https://www.youtube.com/embed/Tqwhq_8QAGk" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video7" src="https://www.youtube.com/embed/tsStUN73_6I" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video8" src="https://www.youtube.com/embed/Gq6MIaZ501A" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <iframe id="video9" src="https://www.youtube.com/embed/HNNSYYmP7qs" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+    <div id="clima" class="tab-pane" style="display: block;">
+        <div class="diarios-tabs">
+            <a href="https://www.meteored.com.ar/mapas-meteorologicos/" target="climaIframe" ondblclick="openPage(this.href)">Mapa lluvias</a>
+            <a href="https://www.smn.gob.ar/pronostico" target="climaIframe" ondblclick="openPage(this.href)">Pronóstico</a>
+            <a href="https://www.smn.gob.ar/alertas" target="climaIframe" ondblclick="openPage(this.href)">Alertas</a>
         </div>
+        <iframe title="climaIframe" src="" id="climaIframe" name="climaIframe" ></iframe>
+    </div>
 
-        <div id="boletinOficial" class="tab-pane fade">
-            <div class="container-fluid">
-                <iframe id="s" src="https://www.boletinoficial.gob.ar/" frameborder="0"
-                        allowfullscreen></iframe>
+    <!-- Pestaña Noticieros -->
+    <div id="noticieros" class="tab-pane">
+        <div class="video-container">
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/cb12KmMMDJA" allowfullscreen></iframe>
             </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/4e8Iw3Frf1A" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/avly0uwZzOE" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/QGpHLgRnrx4" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/TFUxzueYtyc" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/Tqwhq_8QAGk" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/tsStUN73_6I" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/Gq6MIaZ501A" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+                <iframe src="https://www.youtube.com/embed/HNNSYYmP7qs" allowfullscreen></iframe>
+            </div>
+            <!-- Añade los demás videos -->
         </div>
     </div>
+
+    <!-- Pestaña Boletín Oficial -->
+    <div id="boletinOficial" class="tab-pane">
+        <iframe title="boletinOficial iframe" src="https://www.boletinoficial.gob.ar/" allowfullscreen></iframe>
+    </div>
+
+
 </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+    // Función para alternar la visibilidad de los tips
+    function toggleTipsVisibility() {
+        var tipsContainer = document.getElementById("tips-container");
+        console.log(tipsContainer)
+        tipsContainer.style.visibility = "hidden";
+    }
+
+
+    function openPage(href) {
+        window.open(href)
+    }
+
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+
+</script>
 
 </body>
+
 </html>
