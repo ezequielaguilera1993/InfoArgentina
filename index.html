@@ -55,7 +55,7 @@
 
         .video-container iframe {
             width: 100%;
-            height: 300px;
+            height: 31vh;
             margin-bottom: 20px;
         }
 
@@ -65,14 +65,14 @@
             box-sizing: border-box;
         }
 
-        .diarios-tabs {
+        .tabs {
             display: flex;
             background-color: #ddd;
             border-radius: 5px;
             overflow: hidden;
         }
 
-        .diarios-tabs a {
+        .tabs a {
             flex: 1;
             padding: 1vh 0vw;
             margin: 0px 0;
@@ -85,7 +85,7 @@
             color: #333;
         }
 
-        .diarios-tabs a:hover {
+        .tabs a:hover {
             background-color: #333;
             color: #ddd;
         }
@@ -118,7 +118,7 @@
 <div class="tab-content">
     <!-- Pestaña Diarios -->
     <div id="diarios" class="tab-pane" style="display: block;">
-        <div class="diarios-tabs">
+        <div class="tabs">
             <a href="https://elpais.com/argentina/" target="diariosIframe" ondblclick="openPage(this.href)">El
                 País</a>
             <a href="https://www.ambito.com/" target="diariosIframe" ondblclick="openPage(this.href)">Ámbito</a>
@@ -144,8 +144,8 @@
         <iframe title="diariosIframe" src="https://elpais.com/argentina/" id="diariosIframe" name="diariosIframe" ></iframe>
     </div>
 
-    <div id="clima" class="tab-pane" style="display: block;">
-        <div class="diarios-tabs">
+    <div id="clima" class="tab-pane">
+        <div class="tabs">
             <a href="https://www.meteored.com.ar/mapas-meteorologicos/" target="climaIframe" ondblclick="openPage(this.href)">Mapa lluvias</a>
             <a href="https://www.smn.gob.ar/pronostico" target="climaIframe" ondblclick="openPage(this.href)">Pronóstico</a>
             <a href="https://www.smn.gob.ar/alertas" target="climaIframe" ondblclick="openPage(this.href)">Alertas</a>
