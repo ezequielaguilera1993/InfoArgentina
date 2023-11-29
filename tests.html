@@ -22,20 +22,20 @@
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 10px 16px;
             text-decoration: none;
             border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s;
+            transition: border-bottom 0.3s, color 0.3s;
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
-            border-bottom: 2px solid #fff;
+            background-color: #333;
+            color: white;
+            border-bottom: 2px solid #ddd;
         }
 
         .tab-content {
-            padding: 20px;
+            padding: 1px;
         }
 
         .tab-pane {
@@ -64,6 +64,44 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
+
+        .diarios-tabs {
+            display: flex;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .diarios-tabs a {
+            flex: 1;
+            padding: 1vh 0vw;
+            margin: 0px 0;
+            text-decoration: none;
+            border: 1px solid #333;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: x-small;
+            color: #333;
+        }
+
+        .diarios-tabs a:hover {
+            background-color: #333;
+            color: #ddd;
+        }
+
+        #tips-container {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: small;
+            border-radius: 5px;
+            font-size: smaller;
+            margin-top: 0.5vh; /* Ajusta la posición vertical */
+            display: block; /* Asegura que esté visible al inicio */
+        }
+
     </style>
 </head>
 
@@ -73,28 +111,29 @@
     <a href="#diarios" onclick="openTab('diarios')">Diarios</a>
     <a href="#noticieros" onclick="openTab('noticieros')">Noticieros</a>
     <a href="#boletinOficial" onclick="openTab('boletinOficial')">Boletín Oficial</a>
+    <div id="tips-container" onclick="toggleTipsVisibility()">Doble click en diarios para abrirlos en otra pestaña</div>
 </nav>
 
 <div class="tab-content">
     <!-- Pestaña Diarios -->
     <div id="diarios" class="tab-pane" style="display: block;">
         <div class="diarios-tabs">
-            <a href="https://elpais.com/argentina/" target="diariosIframe">El País</a>
-            <a href="https://www.ambito.com/" target="diariosIframe">Ámbito</a>
-            <a href="https://www.laprensa.com.ar/" target="diariosIframe">La Prensa</a>
-            <a href="https://www.clarin.com/" target="diariosIframe">Clarín</a>
-            <a href="https://www.lanacion.com.ar/" target="diariosIframe">La Nación</a>
-            <a href="https://www.diariopopular.com.ar/" target="diariosIframe">Diario Popular</a>
-            <a href="https://www.pagina12.com.ar/" target="diariosIframe">Página 12</a>
-            <a href="https://www.perfil.com/" target="diariosIframe">Perfil</a>
-            <a href="https://www.tiempoar.com.ar/" target="diariosIframe">Tiempo Argentino</a>
-            <a href="https://www.ole.com.ar/" target="diariosIframe">Olé</a>
-            <a href="https://www.infobae.com/" target="diariosIframe">InfoBae</a>
-            <a href="https://www.lavoz.com.ar/" target="diariosIframe">La Voz</a>
-            <a href="https://www.cronica.com.ar/" target="diariosIframe">Crónica</a>
-            <a href="https://www.nytimes.com/" target="diariosIframe">New York Times</a>
+            <a href="https://elpais.com/argentina/" target="diariosIframe" ondblclick="openDiario(this.href)">El País</a>
+            <a href="https://www.ambito.com/" target="diariosIframe" ondblclick="openDiario(this.href)">Ámbito</a>
+            <a href="https://www.laprensa.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">La Prensa</a>
+            <a href="https://www.clarin.com/" target="diariosIframe" ondblclick="openDiario(this.href)">Clarín</a>
+            <a href="https://www.lanacion.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">La Nación</a>
+            <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">Diario Popular</a>
+            <a href="https://www.pagina12.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">Página 12</a>
+            <a href="https://www.perfil.com/" target="diariosIframe" ondblclick="openDiario(this.href)">Perfil</a>
+            <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">Tiempo Argentino</a>
+            <a href="https://www.ole.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">Olé</a>
+            <a href="https://www.infobae.com/" target="diariosIframe" ondblclick="openDiario(this.href)">InfoBae</a>
+            <a href="https://www.lavoz.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">La Voz</a>
+            <a href="https://www.cronica.com.ar/" target="diariosIframe" ondblclick="openDiario(this.href)">Crónica</a>
+            <a href="https://www.nytimes.com/" target="diariosIframe" ondblclick="openDiario(this.href)">New York Times</a>
         </div>
-        <iframe name="diariosIframe" src="" frameborder="0"></iframe>
+        <iframe title="diariosIframe" id="diariosIframe" name="diariosIframe"></iframe>
     </div>
 
     <!-- Pestaña Noticieros -->
@@ -133,4 +172,35 @@
 
     <!-- Pestaña Boletín Oficial -->
     <div id="boletinOficial" class="tab-pane">
-        <iframe src="https://www.boletinoficial.gob.ar/" allow
+        <iframe title="boletinOficial iframe" src="https://www.boletinoficial.gob.ar/" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+<script>
+    // Función para alternar la visibilidad de los tips
+    function toggleTipsVisibility() {
+        var tipsContainer = document.getElementById("tips-container");
+        console.log(tipsContainer)
+        tipsContainer.style.visibility = "hidden";
+    }
+
+
+    function openDiario(href){
+        window.open(href)
+    }
+
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+
+</script>
+
+</body>
+
+</html>
