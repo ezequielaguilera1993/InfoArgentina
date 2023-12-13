@@ -1,236 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-    <title>Info Argentina</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <title>Info Argentina</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="./index.js"></script>
 
-        nav {
-            background-color: #333;
-            overflow: hidden;
-            height: 6vh;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 10px 16px;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #333;
-            color: white;
-            border-bottom: 2px solid #ddd;
-        }
-
-        .tab-content {
-            padding: 1px;
-        }
-
-        .tab-pane {
-            display: none;
-        }
-
-        iframe {
-            width: 100%;
-            border: none;
-            display: block;
-            height: 90vh;
-        }
-
-        .video-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 31vh;
-            margin-bottom: 20px;
-        }
-
-        .column {
-            width: 33.33%;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .tabs {
-            display: flex;
-            background-color: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .tabs a {
-            flex: 1;
-            padding: 1vh 0vw;
-            margin: 0px 0;
-            text-decoration: none;
-            border: 1px solid #333;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-            transition: background-color 0.3s, color 0.3s;
-            font-size: x-small;
-            color: #333;
-        }
-
-        .tabs a:hover {
-            background-color: #333;
-            color: #ddd;
-        }
-
-        #tips-container {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            font-size: small;
-            border-radius: 5px;
-            font-size: smaller;
-            margin-top: 0.5vh; /* Ajusta la posición vertical */
-            display: block; /* Asegura que esté visible al inicio */
-        }
-
-    </style>
-
-    <link rel="icon" type="image/jpg" href="./favicon.png"/>
+  <link rel="icon" type="image/jpg" href="./favicon.png"/>
 </head>
-
 <body>
 
 <nav>
-    <a href="#diarios" onclick="openTab('diarios')">Diarios</a>
-    <a href="#noticieros" onclick="openTab('noticieros')">Noticieros</a>
-    <a href="#boletinOficial" onclick="openTab('boletinOficial')">Boletín Oficial</a>
-    <a href="#clima" onclick="openTab('clima')">Clima</a>
-    <div id="tips-container" onclick="toggleTipsVisibility()">Doble click en pestañas para abrirlas en otra tab del
-        navegador
-    </div>
+  <a href="#diarios" onclick="openTab('diarios')">Diarios</a>
+  <a href="#noticieros" onclick="openTab('noticieros')">Noticieros</a>
+  <a href="#boletinOficial" onclick="openTab('boletinOficial')">Boletín Oficial</a>
+  <a href="#clima" onclick="openTab('clima')">Clima</a>
+  <div id="tips-container" onclick="toggleTipsVisibility()">Doble click en pestañas para abrirlas en otra tab del
+    navegador
+  </div>
 </nav>
 
 <div class="tab-content">
-    <!-- Pestaña Diarios -->
-    <div id="diarios" class="tab-pane" style="display: block;">
-        <div class="tabs">
-            <a href="https://elpais.com/argentina/" target="diariosIframe" ondblclick="openPage(this.href)">El
-                País</a>
-            <a href="https://www.ambito.com/" target="diariosIframe" ondblclick="openPage(this.href)">Ámbito</a>
-            <a href="https://www.laprensa.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La
-                Prensa</a>
-            <a href="https://www.clarin.com/" target="diariosIframe" ondblclick="openPage(this.href)">Clarín</a>
-            <a href="https://www.lanacion.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La
-                Nación</a>
-            <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Diario
-                Popular</a>
-            <a href="https://www.pagina12.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Página
-                12</a>
-            <a href="https://www.perfil.com/" target="diariosIframe" ondblclick="openPage(this.href)">Perfil</a>
-            <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Tiempo
-                Argentino</a>
-            <a href="https://www.ole.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Olé</a>
-            <a href="https://www.infobae.com/" target="diariosIframe" ondblclick="openPage(this.href)">InfoBae</a>
-            <a href="https://www.lavoz.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Voz</a>
-            <a href="https://www.cronica.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Crónica</a>
-            <a href="https://www.nytimes.com/" target="diariosIframe" ondblclick="openPage(this.href)">New York
-                Times</a>
-        </div>
-        <iframe title="diariosIframe" src="https://elpais.com/argentina/" id="diariosIframe"
-                name="diariosIframe"></iframe>
+
+  <!-- Pestaña Diarios ---------------------------------------------------------------------------------------------------------------->
+  <div id="diarios" class="tab-pane" style="display: block;">
+    <div class="tabs">
+      <a href="https://elpais.com/argentina/" target="diariosIframe" ondblclick="openPage(this.href)">El País</a>
+      <a href="https://www.ambito.com/" target="diariosIframe" ondblclick="openPage(this.href)">Ámbito</a>
+      <a href="https://www.laprensa.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Prensa</a>
+      <a href="https://www.clarin.com/" target="diariosIframe" ondblclick="openPage(this.href)">Clarín</a>
+      <a href="https://www.lanacion.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Nación</a>
+      <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Diario Popular</a>
+      <a href="https://www.pagina12.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Página 12</a>
+      <a href="https://www.perfil.com/" target="diariosIframe" ondblclick="openPage(this.href)">Perfil</a>
+      <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Tiempo Argentino</a>
+      <a href="https://www.ole.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Olé</a>
+      <a href="https://www.infobae.com/" target="diariosIframe" ondblclick="openPage(this.href)">InfoBae</a>
+      <a href="https://www.lavoz.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Voz</a>
+      <a href="https://www.cronica.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Crónica</a>
+      <a href="https://www.nytimes.com/" target="diariosIframe" ondblclick="openPage(this.href)">New York Times</a>
     </div>
+    <iframe title="diariosIframe" src="https://elpais.com/argentina/" id="diariosIframe"
+            name="diariosIframe"></iframe>
+  </div>
 
-    <div id="clima" class="tab-pane">
-        <div class="tabs">
-            <a href="https://www.meteored.com.ar/mapas-meteorologicos/" target="climaIframe"
-               ondblclick="openPage(this.href)">Mapa lluvias</a>
-            <a href="https://www.smn.gob.ar/pronostico" target="climaIframe"
-               ondblclick="openPage(this.href)">Pronóstico</a>
-            <a href="https://www.smn.gob.ar/alertas" target="climaIframe" ondblclick="openPage(this.href)">Alertas</a>
-        </div>
-        <iframe title="climaIframe" src="https://www.meteored.com.ar/mapas-meteorologicos/" id="climaIframe" name="climaIframe"></iframe>
+  <!-- Pestaña Noticieros -------------------------------------------------------------------------------------->
+  <div id="noticieros" class="tab-pane">
+    <div class="video-container">
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/cb12KmMMDJA" title="TN" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/4e8Iw3Frf1A" title="La Nación" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/avly0uwZzOE" title="Crónica" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/QGpHLgRnrx4" title="A24" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/4FXpqvatghc" title="C5N" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/IZj4NNDK-PE" title="Canal 26" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/tsStUN73_6I" title="DW" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/Gq6MIaZ501A" title="DTV" allowfullscreen></iframe>
+      </div>
+      <div class="column">
+        <iframe src="https://www.youtube.com/embed/UWgVIzzuiaA" title="Televisión Pública"
+                allowfullscreen></iframe>
+      </div>
     </div>
+  </div>
 
-    <!-- Pestaña Noticieros -->
-    <div id="noticieros" class="tab-pane">
-        <div class="video-container">
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/cb12KmMMDJA" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/4e8Iw3Frf1A" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/avly0uwZzOE" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/QGpHLgRnrx4" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/TFUxzueYtyc" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/Tqwhq_8QAGk" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/tsStUN73_6I" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/Gq6MIaZ501A" allowfullscreen></iframe>
-            </div>
-            <div class="column">
-                <iframe src="https://www.youtube.com/embed/HNNSYYmP7qs" allowfullscreen></iframe>
-            </div>
-            <!-- Añade los demás videos -->
-        </div>
+  <!-- Pestaña Boletín Oficial ---------------------------------------------------------------------------------------------------------------->
+  <div id="boletinOficial" class="tab-pane">
+    <iframe title="boletinOficial iframe" src="https://www.boletinoficial.gob.ar/" allowfullscreen></iframe>
+  </div>
+
+  <div id="clima" class="tab-pane">
+    <div class="tabs">
+      <a href="https://www.meteored.com.ar/mapas-meteorologicos/" target="climaIframe"
+         ondblclick="openPage(this.href)">Mapa lluvias</a>
+      <a href="https://www.smn.gob.ar/pronostico" target="climaIframe"
+         ondblclick="openPage(this.href)">Pronóstico</a>
+      <a href="https://www.smn.gob.ar/alertas" target="climaIframe" ondblclick="openPage(this.href)">Alertas</a>
     </div>
-
-    <!-- Pestaña Boletín Oficial -->
-    <div id="boletinOficial" class="tab-pane">
-        <iframe title="boletinOficial iframe" src="https://www.boletinoficial.gob.ar/" allowfullscreen></iframe>
-    </div>
-
-
+    <iframe title="climaIframe" src="https://www.meteored.com.ar/mapas-meteorologicos/" id="climaIframe"
+            name="climaIframe"></iframe>
+  </div>
 </div>
-
-
-<script>
-
-    // Función para alternar la visibilidad de los tips
-    function toggleTipsVisibility() {
-        var tipsContainer = document.getElementById("tips-container");
-        console.log(tipsContainer)
-        tipsContainer.style.visibility = "hidden";
-    }
-
-
-    function openPage(href) {
-        window.open(href)
-    }
-
-    function openTab(tabName) {
-        var i, x;
-        x = document.getElementsByClassName("tab-pane");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
-    }
-
-</script>
-
 </body>
 
 </html>
