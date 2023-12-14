@@ -16,8 +16,9 @@
   <a href="#noticieros" onclick="openTab('noticieros')">Noticieros</a>
   <a href="#boletinOficial" onclick="openTab('boletinOficial')">Boletín Oficial</a>
   <a href="#clima" onclick="openTab('clima')">Clima</a>
-  <div id="tips-container" onclick="toggleTipsVisibility()">Doble click en pestañas para abrirlas en otra tab del
-    navegador
+  <a href="#canalesYoutube" onclick="openTab('canalesYoutube')">Canales de Youtube</a>
+  <div id="tips-container" onclick="toggleTipsVisibility()">Si una pestaña no funciona, darle doble click abrirlas en
+    otra tab del navegador
   </div>
 </nav>
 
@@ -31,10 +32,12 @@
       <a href="https://www.laprensa.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Prensa</a>
       <a href="https://www.clarin.com/" target="diariosIframe" ondblclick="openPage(this.href)">Clarín</a>
       <a href="https://www.lanacion.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Nación</a>
-      <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Diario Popular</a>
+      <a href="https://www.diariopopular.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Diario
+        Popular</a>
       <a href="https://www.pagina12.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Página 12</a>
       <a href="https://www.perfil.com/" target="diariosIframe" ondblclick="openPage(this.href)">Perfil</a>
-      <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Tiempo Argentino</a>
+      <a href="https://www.tiempoar.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Tiempo
+        Argentino</a>
       <a href="https://www.ole.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">Olé</a>
       <a href="https://www.infobae.com/" target="diariosIframe" ondblclick="openPage(this.href)">InfoBae</a>
       <a href="https://www.lavoz.com.ar/" target="diariosIframe" ondblclick="openPage(this.href)">La Voz</a>
@@ -84,6 +87,8 @@
     <iframe title="boletinOficial iframe" src="https://www.boletinoficial.gob.ar/" allowfullscreen></iframe>
   </div>
 
+
+  <!-- Pestaña Clima ---------------------------------------------------------------------------------------------------------------->
   <div id="clima" class="tab-pane">
     <div class="tabs">
       <a href="https://www.meteored.com.ar/mapas-meteorologicos/" target="climaIframe"
@@ -95,6 +100,18 @@
     <iframe title="climaIframe" src="https://www.meteored.com.ar/mapas-meteorologicos/" id="climaIframe"
             name="climaIframe"></iframe>
   </div>
+
+  <!-- Pestaña Canales de Youtube ---------------------------------------------------------------------------------------------------------------->
+  <div id="canalesYoutube" class="tab-pane">
+    <div class="tabs">
+      <a href="https://www.youtube.com/@VoceriaPresidencial" target="canalesYoutubeIframe"
+         ondblclick="openPage(this.href)">Voceria Presidencial</a>
+    </div>
+    <iframe title="canalesYoutubeIframe" src="https://www.youtube.com/@VoceriaPresidencial" id="canalesYoutubeIframe"
+            name="canalesYoutubeIframe"></iframe>
+  </div>
+
+
 </div>
 </body>
 
